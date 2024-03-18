@@ -1,12 +1,9 @@
 # terraform-eks
-
-To create Private EKS never forget to create NAT Gateway and attach it to the Private Route Table of the VPC.
-
-Install kubectl 
-
-########### To generate the .kube/config file run the below command  ###########
-
-aws eks update-kubeconfig --name eks-demo-cluster --region us-east-2    
+```
+1. First of all clone this repository and change the directory to "terraform-ekswithaddons-efsprometheusgrafana".
+2. Run the shell script initial-setup.sh only once on your k8s-management-node or terraform-server. As this script will install the kubectl, helm and uninstall awscli version 1 then install awscli version 2. After running this shell script just logout from the logged-in user and then login again.
+3. Finally you can create the different environment depending on your need using this terraform script.
+```   
 
 
 
