@@ -5,8 +5,11 @@
 3. Finally you can create the different environment depending on your need using this terraform script.
 ```   
 
-
-
+# To list the context and switch context
+```
+kubectl config get-contexts
+kubectl config use-context <CONTEXT_NAME>
+```
 
 
 # Install and configure EKS Container Insight 
