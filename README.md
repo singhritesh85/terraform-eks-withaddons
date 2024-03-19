@@ -7,7 +7,7 @@
 
 # Managing kubeconfig file
 ```
-For best practice you can keep the kubeconfig file at separate locations as mentioned below. Create directories as mentioned below:-
+For best practice you can keep the kubeconfig file at separate paths as mentioned below. Create directories as mentioned below:-
 
  mkdir dev
  mkdir stage
