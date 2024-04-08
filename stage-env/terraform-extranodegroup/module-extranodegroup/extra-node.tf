@@ -79,7 +79,7 @@ resource "aws_eks_node_group" "eksnodegroup2" {
   }   
 
   update_config {
-    max_unavailable = 2
+    max_unavailable_percentage = 50%
   }
   
   tags = {
