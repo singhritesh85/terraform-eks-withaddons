@@ -176,7 +176,7 @@ resource "aws_eks_node_group" "eksnode" {
   }
 
   update_config {
-    max_unavailable_percentage = "50%"       ### Maximum percentage of unavailable worker nodes while performing node group update.
+    max_unavailable_percentage = "33%"       ### Maximum percentage of unavailable worker nodes while performing node group update.
   }
 
   depends_on = [
