@@ -193,15 +193,19 @@ resource "aws_eks_node_group" "eksnode" {
 # IAM Role for EKS Node Group
 #----------------------------
 
+resource "aws_iam_role_policy" "eksnode_policy" {
+  name = "eksnode-policy-${var.env}"
+  role = aws_iam_role.eksnoderole.id
+
+  policy = file("autoscalepolicy.json")
+
+}
+
 resource "aws_iam_role" "eksnoderole" {
   name = "${var.eks_nodegrouprole_name}-${var.env}"
 
   assume_role_policy = file("trust-relationship-nodegroup.json")              ## This is the trust relationship for IAM Role.
 
-  inline_policy {                                                             ## This is the inline policy for autoscaling attached with the IAM Role.
-    name = "autoscale_inline_policy-${var.env}"
-    policy = file("autoscalepolicy.json")
-  }
   tags = {
     Environment = var.env        ##"Dev"
     Owner       = "Ops"
